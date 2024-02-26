@@ -1,4 +1,4 @@
-package com.felipesutter.RestAPIWithSpringBoot3.exceptions;
+package com.felipesutter.api.exceptions;
 
 import java.io.Serializable;
 import java.util.Date;

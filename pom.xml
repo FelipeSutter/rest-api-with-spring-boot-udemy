@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.felipesutter</groupId>
-	<artifactId>RestAPIWithSpringBoot3</artifactId>
+	<artifactId>api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RestAPIWithSpringBoot3</name>
 	<description>Demo project for Spring Boot</description>

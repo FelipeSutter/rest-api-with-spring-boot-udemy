@@ -1,4 +1,4 @@
-package com.felipesutter.RestAPIWithSpringBoot3.exceptions.handler;
+package com.felipesutter.api.exceptions.handler;
 
 import java.util.Date;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.felipesutter.RestAPIWithSpringBoot3.exceptions.ExceptionResponse;
-import com.felipesutter.RestAPIWithSpringBoot3.exceptions.UnsupportedMathOperationException;
+import com.felipesutter.api.exceptions.ExceptionResponse;
+import com.felipesutter.api.exceptions.UnsupportedMathOperationException;
 
 @ControllerAdvice
 @RestController
