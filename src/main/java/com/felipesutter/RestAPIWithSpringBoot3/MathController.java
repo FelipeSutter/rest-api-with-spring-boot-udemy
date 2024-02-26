@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.felipesutter.RestAPIWithSpringBoot3.exceptions.UnsupportedMathOperationException;
+
 @RestController
 @RequestMapping("/sum")
 public class MathController {
@@ -14,11 +16,10 @@ public class MathController {
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/{numberOne}/{numberTwo}")
-	public Double sum(@PathVariable(value = "numberOne") String numberOne,
-			@PathVariable(value = "numberTwo") String numberTwo) throws Exception {
+	public Double sum(@PathVariable String numberOne, @PathVariable String numberTwo) throws Exception {
 
 		if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-			throw new Exception();
+			throw new UnsupportedMathOperationException("Please set a numeric value");
 		}
 
 		return convertToDouble(numberOne) + convertToDouble(numberTwo);
@@ -37,13 +38,13 @@ public class MathController {
 	}
 	
 	private boolean isNumeric(String strNumber) {
-		if (strNumber == null)
-			return false;
+	    if (strNumber == null)
+	        return false;
 
-		String number = strNumber.replace(",", ".");
+	    String number = strNumber.replace(",", ".");
 
-		return number.matches("[-+]?[0-9]*\\?[0-9]+");
-
+	    return number.matches("[-+]?[0-9]*\\.?[0-9]+");
 	}
+
 
 }
