@@ -49,7 +49,7 @@ public class PersonService {
 		entity.setAddress(person.getAddress());
 		entity.setGender(person.getGender());
 		
-		return person;
+		return repository.save(person);
 	}
 
 	public void delete(Long id) {
